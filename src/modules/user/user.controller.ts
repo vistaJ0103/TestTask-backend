@@ -53,7 +53,7 @@ export class UserController {
   }
 
   @Delete(':id')
-  async remove(@Param('id') id: string, @Request() req: any) {
+  async remove(@Param('id') id: string) {
     // if (id == req.user.id) {
     //   return { msg: 'Not allow' };
     // }
