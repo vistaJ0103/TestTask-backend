@@ -46,7 +46,6 @@ export class UserController {
   @Patch('update')
   async updateUser(@Body() updateUserDto: UpdateUserDto) {
     const user = await this.userService.findById(updateUserDto.userId);
-    console.log(updateUserDto);
     if (!user) {
       return { msg: 'User not found ' };
     }
@@ -55,7 +54,6 @@ export class UserController {
 
   @Delete(':id')
   async remove(@Param('id') id: string, @Request() req: any) {
-    console.log(req);
     // if (id == req.user.id) {
     //   return { msg: 'Not allow' };
     // }
